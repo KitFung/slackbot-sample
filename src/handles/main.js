@@ -4,6 +4,7 @@ import * as wiki from './wiki.js';
 import * as hackernews from './hackerNews.js';
 
 const routeHandlerMatching = {
+  'echo': echo,
   'user': user.route,
   'google': google.route,
   'wiki': wiki.route,
@@ -15,6 +16,10 @@ const routeRewrite = {
   'animateme': ['google', 'animateme'],
   'wikime': ['wiki', 'wikime'],
 };
+
+function echo(bot, command) {
+  bot.postMessageToChannel('general',command.join(" ");
+}
 
 exports.handleRoute = function(bot, command, user) {
   let nextLevel = command.shift();
