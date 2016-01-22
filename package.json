@@ -1,0 +1,29 @@
+{
+  "name": "slackbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/server.js",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "slackbots": "^0.5.1",
+    "sqlite3": "^3.1.1",
+    "whatwg-fetch": "^0.11.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "grunt": "^0.4.5",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^3.4.0",
+    "node-dev": "^2.7.1"
+  },
+  "scripts": {
+    "start": "node ./lib/initdb.js && node ./lib/server.js",
+    "dev": "node-dev ./lib/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "initdb": "node ./lib/initdb.js",
+    "build": "babel src -d lib"
+  },
+  "author": "",
+  "license": "ISC"
+}
