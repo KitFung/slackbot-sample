@@ -20,7 +20,7 @@ app.get('/msg', function(req, res) {
   const text = 'Msg from direct api - Some one say: ' + req.query.text;
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify({
-    'response_type': 'in_channel',
+    'response_type': 'ephemeral',
     'text': text,
     'attachments': {
       'text': text,
