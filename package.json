@@ -4,6 +4,9 @@
   "description": "",
   "main": "./lib/server.js",
   "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "firebase": "^2.4.0",
     "isomorphic-fetch": "^2.2.1",
     "slackbots": "^0.5.1",
     "sqlite3": "^3.1.1",
@@ -18,11 +21,14 @@
     "node-dev": "^2.7.1"
   },
   "scripts": {
-    "start": "node ./lib/initdb.js && node ./lib/server.js",
-    "dev": "node-dev ./lib/server.js",
+    "start": "node ./lib/initdb.js && node ./lib/botsocket.js",
+    "socket": "node ./lib/botsocket.js",
+    "firebase": "node ./lib/botfirebase.js",
+    "server": "node ./lib/botserver.js",
+    "dev": "node-dev ./lib/botsocket.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "initdb": "node ./lib/initdb.js",
-    "build": "babel src -d lib"
+    "build": "grunt babel"
   },
   "author": "",
   "license": "ISC"
